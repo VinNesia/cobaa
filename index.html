@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paket website statis profesional untuk bisnis Indonesia. Harga mulai 150rb dengan hosting, domain, dan source code. User Mandiri & Managed tersedia.">
+    <meta name="keywords" content="website statis, jasa website, paket website murah, website bisnis, hosting domain Indonesia">
+    <meta name="author" content="WebStatic Pro">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="WebStatic Pro - Paket Website Statis Profesional">
+    <meta property="og:description" content="Solusi website statis terjangkau untuk bisnis Indonesia. Mulai dari 150rb sudah termasuk hosting dan domain.">
+    <meta property="og:url" content="https://webmarket.vinnesia.my.id">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://webmarket.vinnesia.my.id/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://webmarket.vinnesia.my.id">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>WebStatic Pro - Paket Website Statis Profesional Indonesia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"></noscript>
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --success-color: #27ae60;
+            --text-color: #2c3e50;
+            --bg-light: #f8f9ff;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.15);
+            --border-radius: 15px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            color: var(--white);
+            margin: 100px 0 60px 0;
+            padding: 60px 0;
+        }
+
+        .header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .pricing-section:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+
+        .pricing-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        .pricing-table td {
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            vertical-align: top;
+            transition: var(--transition);
+        }
+
+        .pricing-table tbody tr:hover {
+            background: var(--bg-light);
+            transform: scale(1.01);
+        }
+
+        .pricing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .package-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--success-color);
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .features-cell {
+            text-align: left;
+            max-width: 300px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .feature:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature i {
+            color: var(--primary-color);
+            font-size: 1rem;
+            margin-top: 2px;
+            min-width: 16px;
+        }
+
+        .feature strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .popular {
+            position: relative;
+        }
+
+        .popular::before {
+            content: '⭐ POPULER';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6b6b;
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* License Section */
+        .license-section {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e8eeff 100%);
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .license-title {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .license-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .license-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .license-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .license-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .license-card p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .license-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--border-radius);
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            white-space: nowrap;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            background: var(--bg-light);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-color);
+            color: var(--white);
+            padding: 4rem 0 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #888;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .header {
+                margin: 80px 0 40px 0;
+                padding: 40px 0;
+            }
+
+            .pricing-section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .pricing-table {
+                font-size: 0.85rem;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 1rem 0.5rem;
+            }
+
+            .features-cell {
+                max-width: 200px;
+            }
+
+            .feature {
+                font-size: 0.8rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .license-options {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.8rem 0.3rem;
+            }
+
+            .features-cell {
+                max-width: 150px;
+            }
+
+            .feature {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Performance optimizations */
+        .pricing-table {
+            contain: layout;
+        }
+
+        .pricing-section {
+            contain: layout;
+        }
+
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="https://webmarket.vinnesia.my.id" class="logo" aria-label="WebStatic Pro Homepage">
+                <i class="fas fa-globe" aria-hidden="true"></i> WebStatic Pro
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#user-mandiri" class="nav-link">User Mandiri</a></li>
+                <li><a href="#managed" class="nav-link">Managed</a></li>
+                <li><a href="#license" class="nav-link">License</a></li>
+                <li><a href="#contact" class="nav-link">Kontak</a></li>
+                <li><a href="/portofolio" class="nav-link">Portofolio</a></li>
+                <li><a href="/faq" class="nav-link">FAQ</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <h1><i class="fas fa-globe" aria-hidden="true"></i> WebStatic Pro</h1>
+                <p>Solusi Website Statis Profesional untuk Bisnis Indonesia dengan Harga Terjangkau</p>
+            </header>
+
+            <!-- User Mandiri Section -->
+            <section class="pricing-section" id="user-mandiri" aria-labelledby="user-mandiri-title">
+                <h2 class="section-title" id="user-mandiri-title">
+                    <i class="fas fa-user-cog" aria-hidden="true"></i> Skema User Mandiri
+                </h2>
+                <div class="section-description">
+                    Anda mengelola sendiri aset digital (domain, hosting, file website)<br>
+                    <strong>Non Source Code:</strong> File compiled/minified | <strong>Source Code:</strong> File mentah dapat diedit
+                </div>
+                
+                <div class="table-container">
+                    <table class="pricing-table" role="table" aria-label="Paket User Mandiri">
+                        <thead>
+                            <tr role="row">
+                                <th scope="col">Paket</th>
+                                <th scope="col">Non Source Code</th>
+                                <th scope="col">Source Code</th>
+                                <th scope="col">File + Hosting</th>
+                                <th scope="col" class="popular">File + Hosting + Domain</th>
+                                <th scope="col">Fitur Unggulan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr role="row">
+                                <td class="package-name">Basic</td>
+                                <td class="price">Rp 150.000</td>
+                                <td class="price">Rp 250.000</td>
+                                <td class="price">Rp 400.000</td>
+                                <td class="price">Rp 550.000</td>
+                                <td class="features-cell">
+                                    <div class="feature">
+                                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                        <span><strong>1–3 halaman siap pakai</strong> (Home, Tentang, Kontak)</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                                        <span>Responsif untuk HP & Laptop</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                        <span>Google Maps & WhatsApp Button</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-book" aria-hidden="true"></i>
+                                        <span>Panduan setup singkat</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr role="row">
+                                <td class="package-name">Standard</td>
+                                <td class="price">Rp 300.000</td>
+                                <td class="price">Rp 500.000</td>
+                                <td class="price">Rp 650.000</td>
+                                <td class="price">Rp 800.000</td>
+                                <td class="features-cell">
+                                    <div class="feature">
+                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                        <span>Semua fitur Basic</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                        <span><strong>3–5 halaman premium</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-globe" aria-hidden="true"></i>
+                                        <span>Domain .com/.id + SSL</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                                        <span>Training update konten</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-paint-brush" aria-hidden="true"></i>
+                                        <span><strong>Desain premium, siap pakai</strong></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr role="row">
+                                <td class="package-name">Premium</td>
+                                <td class="price">Rp 500.000</td>
+                                <td class="price">Rp 800.000</td>
+                                <td class="price">Rp 950.000</td>
+                                <td class="price">Rp 1.100.000</td>
+                                <td class="features-cell">
+                                    <div class="feature">
+                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                        <span>Semua fitur Standard</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                        <span><strong>5–7 halaman custom</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-palette" aria-hidden="true"></i>
+                                        <span><strong>Custom design sesuai brand</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-search" aria-hidden="true"></i>
+                                        <span>SEO basic</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                                        <span>Form kontak + galeri + testimoni</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-headset" aria-hidden="true"></i>
+                                        <span><strong>Support 1 bulan</strong> untuk revisi ringan</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Managed Section -->
+            <section class="pricing-section" id="managed" aria-labelledby="managed-title">
+                <h2 class="section-title" id="managed-title">
+                    <i class="fas fa-cogs" aria-hidden="true"></i> Skema Managed (Kami Kelola Semua)
+                </h2>
+                <div class="section-description">
+                    Kami mengelola domain, hosting, dan maintenance website untuk Anda<br>
+                    <strong>Non Source Code:</strong> File compiled/minified | <strong>Source Code:</strong> File mentah dapat diedit
+                </div>
+
+                <div class="table-container">
+                    <table class="pricing-table" role="table" aria-label="Paket Managed">
+                        <thead>
+                            <tr role="row">
+                                <th scope="col">Paket</th>
+                                <th scope="col">Non Source Code</th>
+                                <th scope="col">Source Code</th>
+                                <th scope="col">File + Hosting</th>
+                                <th scope="col" class="popular">File + Hosting + Domain</th>
+                                <th scope="col">Fitur Unggulan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr role="row">
+                                <td class="package-name">Basic Managed</td>
+                                <td class="price">Rp 250.000</td>
+                                <td class="price">Rp 400.000</td>
+                                <td class="price">Rp 600.000</td>
+                                <td class="price">Rp 800.000</td>
+                                <td class="features-cell">
+                                    <div class="feature">
+                                        <i class="fas fa-server" aria-hidden="true"></i>
+                                        <span>Hosting GitHub Pages + subdomain</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-user-cog" aria-hidden="true"></i>
+                                        <span><strong>Kamu kelola akun & domain</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                                        <span><strong>Website live langsung</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                                        <span>Update minor 1x</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr role="row">
+                                <td class="package-name">Standard Managed</td>
+                                <td class="price">Rp 500.000</td>
+                                <td class="price">Rp 750.000</td>
+                                <td class="price">Rp 950.000</td>
+                                <td class="price">Rp 1.200.000</td>
+                                <td class="features-cell">
+                                    <div class="feature">
+                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                        <span>Semua fitur Basic</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-globe" aria-hidden="true"></i>
+                                        <span><strong>Domain .com/.id + SSL siap pakai</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-tools" aria-hidden="true"></i>
+                                        <span><strong>Setup penuh, website langsung live</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                                        <span>Update minor 2x</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr role="row">
+                                <td class="package-name">Premium Managed</td>
+                                <td class="price">Rp 800.000</td>
+                                <td class="price">Rp 1.200.000</td>
+                                <td class="price">Rp 1.400.000</td>
+                                <td class="price">Rp 1.700.000</td>
+                                <td class="features-cell">
+                                    <div class="feature">
+                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                        <span>Semua fitur Standard</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-palette" aria-hidden="true"></i>
+                                        <span><strong>Custom design & animasi ringan</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-cog" aria-hidden="true"></i>
+                                        <span><strong>Integrasi tools</strong> (WA, Maps, Form)</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-search" aria-hidden="true"></i>
+                                        <span>SEO basic</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-headset" aria-hidden="true"></i>
+                                        <span><strong>Support bulanan & update 3x</strong></span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                        <span><strong>Semua aset tetap dipegang penjual</strong></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- License Section -->
+            <section class="license-section" id="license" aria-labelledby="license-title">
+                <h3 class="license-title" id="license-title">
+                    <i class="fas fa-certificate" aria-hidden="true"></i> Opsi Lisensi Tambahan
+                </h3>
+                <div class="license-options">
+                    <article class="license-card">
+                        <h3><i class="fas fa-user" aria-hidden="true"></i> Single-Use License</h3>
+                        <p><strong>Gratis (Default)</strong></p>
+                        <p>Template hanya boleh digunakan untuk 1 website/bisnis. Tidak boleh dijual kembali atau digunakan untuk klien lain.</p>
+                    </article>
+                    <article class="license-card">
+                        <h3><i class="fas fa-infinity" aria-hidden="true"></i> Full/Resell License</h3>
+                        <p><strong>+Rp 500.000 - Rp 2.000.000</strong></p>
+                        <p>Template boleh digunakan berkali-kali, dijual kembali ke klien, atau digunakan untuk proyek komersial tanpa batas.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section" id="contact" aria-labelledby="cta-title">
+                <h2 id="cta-title"><i class="fas fa-rocket" aria-hidden="true"></i> Siap Memulai Bisnis Online Anda?</h2>
+                <p>Hubungi kami sekarang untuk konsultasi gratis, demo website, atau informasi Full License</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/628123456789?text=Halo,%20saya%20tertarik%20dengan%20paket%20website%20statis" class="cta-button" aria-label="Order atau Demo via WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Order / Demo
+                    </a>
+                    <a href="mailto:info@webstaticpro.com?subject=Inquiry%20Full%20License" class="cta-button" aria-label="Informasi Full License via Email">
+                        <i class="fas fa-certificate" aria-hidden="true"></i> Full License
+                    </a>
+                    <a href="tel:+628123456789" class="cta-button" aria-label="Konsultasi Gratis via Telepon">
+                        <i class="fas fa-phone" aria-hidden="true"></i> Konsultasi Gratis
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WebStatic Pro</h3>
+                    <p>Solusi website statis profesional untuk bisnis Indonesia dengan harga terjangkau dan kualitas terbaik.</p>
+                    <p><strong>Domain:</strong> <a href="https://webmarket.vinnesia.my.id">webmarket.vinnesia.my.id</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Layanan</h3>
+                    <div class="footer-links">
+                        <a href="/user-mandiri">User Mandiri</a>
+                        <a href="/managed">Managed Service</a>
+                        <a href="/custom-design">Custom Design</a>
+                        <a href="/seo-optimization">SEO Optimization</a>
+                        <a href="/maintenance">Website Maintenance</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Informasi</h3>
+                    <div class="footer-links">
+                        <a href="/tentang-kami">Tentang Kami</a>
+                        <a href="/portofolio">Portofolio</a>
+                        <a href="/testimoni">Testimoni</a>
+                        <a href="/faq">FAQ</a>
+                        <a href="/blog">Blog</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <p><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp: <a href="https://wa.me/628123456789">+62 812-3456-789</a></p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:info@webstaticpro.com">info@webstaticpro.com</a></p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Jakarta, Indonesia</p>
+                    <div class="footer-links" style="margin-top: 1rem;">
+                        <a href="/syarat-ketentuan">Syarat & Ketentuan</a>
+                        <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><i class="fas fa-heart" aria-hidden="true"></i> Dibuat dengan cinta untuk bisnis Indonesia</p>
+                <p>&copy; 2025 WebStatic Pro. Semua hak cipta dilindungi. | <a href="https://webmarket.vinnesia.my.id">webmarket.vinnesia.my.id</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Update aria-expanded for accessibility
+            const isExpanded = navMenu.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navMenu.contains(event.target) || hamburger.contains(event.target);
+            if (!isClickInsideNav && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('.nav');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.backdropFilter = 'blur(15px)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all pricing sections for fade-in animation
+        document.querySelectorAll('.pricing-section, .license-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(section);
+        });
+
+        // Table row hover effects optimization
+        const tableRows = document.querySelectorAll('.pricing-table tbody tr');
+        tableRows.forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.willChange = 'transform';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.willChange = 'auto';
+            });
+        });
+
+        // Preload critical resources
+        const preloadFont = document.createElement('link');
+        preloadFont.rel = 'preload';
+        preloadFont.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+        preloadFont.as = 'style';
+        document.head.appendChild(preloadFont);
+
+        // Performance monitoring
+        if ('performance' in window) {
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    const perfData = performance.getEntriesByType('navigation')[0];
+                    console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+                }, 0);
+            });
+        }
+
+        // Service Worker registration for PWA (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('SW registered: ', registration);
+                }).catch(function(registrationError) {
+                    console.log('SW registration failed: ', registrationError);
+                });
+            });
+        }
+
+        // Error handling for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+            });
+        });
+
+        // Optimize for Core Web Vitals
+        let clsValue = 0;
+        let clsEntries = [];
+
+        const cls = new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                if (!entry.hadRecentInput) {
+                    clsEntries.push(entry);
+                    clsValue += entry.value;
+                }
+            }
+        });
+
+        cls.observe({type: 'layout-shift', buffered: true});
+
+        // First Input Delay
+        const fid = new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntries()) {
+                console.log('FID:', entry.processingStart - entry.startTime);
+            }
+        });
+
+        fid.observe({type: 'first-input', buffered: true});
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "WebStatic Pro",
+        "url": "https://webmarket.vinnesia.my.id",
+        "logo": "https://webmarket.vinnesia.my.id/logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+62-812-3456-789",
+            "contactType": "Customer Service",
+            "availableLanguage": "Indonesian"
+        },
+        "sameAs": [
+            "https://wa.me/628123456789"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "ID",
+            "addressLocality": "Jakarta"
+        },
+        "description": "Paket website statis profesional untuk bisnis Indonesia dengan harga terjangkau mulai dari 150rb"
+    }
+    </script>
+</body>
+</html>
