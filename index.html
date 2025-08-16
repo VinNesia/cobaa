@@ -23,7 +23,10 @@
             --primary-color: #667eea;
             --secondary-color: #764ba2;
             --success-color: #27ae60;
+            --accent-color: #3498db;
+            --warning-color: #f39c12;
             --text-color: #2c3e50;
+            --text-light: #6c757d;
             --bg-light: #f8f9ff;
             --white: #ffffff;
             --shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -151,6 +154,71 @@
             margin: 0 auto;
         }
 
+        /* Info Banner */
+        .info-banner {
+            background: var(--warning-color);
+            color: var(--white);
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-card {
+            border: 2px solid #e9ecef;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .comparison-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-card.recommended {
+            border-color: var(--success-color);
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+        }
+
+        .comparison-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .comparison-card.recommended h3 {
+            color: var(--success-color);
+        }
+
         /* Pricing Section */
         .pricing-section {
             background: var(--white);
@@ -188,121 +256,183 @@
 
         .section-description {
             text-align: center;
-            color: #666;
+            color: var(--text-light);
             margin-bottom: 2rem;
             font-size: 1.1rem;
             line-height: 1.8;
-        }
-
-        /* Table Styles */
-        .table-container {
-            overflow-x: auto;
-            margin-bottom: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            font-size: 0.95rem;
-        }
-
-        .pricing-table th {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            padding: 1.5rem 1rem;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1rem;
-            position: relative;
-        }
-
-        .pricing-table td {
-            padding: 1.5rem 1rem;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
-            vertical-align: top;
-            transition: var(--transition);
-        }
-
-        .pricing-table tbody tr:hover {
+            padding: 1rem;
             background: var(--bg-light);
-            transform: scale(1.01);
+            border-radius: var(--border-radius);
         }
 
-        .pricing-table tbody tr:last-child td {
-            border-bottom: none;
+        /* New simplified table styles */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .package-name {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-color);
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            white-space: nowrap;
-        }
-
-        .price {
-            font-weight: 700;
-            color: var(--success-color);
-            font-size: 1rem;
-            white-space: nowrap;
-        }
-
-        .features-cell {
-            text-align: left;
-            max-width: 300px;
-        }
-
-        .feature {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-bottom: 0.8rem;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .feature:last-child {
-            margin-bottom: 0;
-        }
-
-        .feature i {
-            color: var(--primary-color);
-            font-size: 1rem;
-            margin-top: 2px;
-            min-width: 16px;
-        }
-
-        .feature strong {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        .popular {
+        .pricing-card {
+            background: var(--white);
+            border: 2px solid #e9ecef;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
             position: relative;
+            overflow: hidden;
         }
 
-        .popular::before {
-            content: '⭐ POPULER';
+        .pricing-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--success-color);
+            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
+        }
+
+        .pricing-card.popular::before {
+            content: '⭐ PALING POPULER';
             position: absolute;
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: #ff6b6b;
+            background: var(--success-color);
             color: var(--white);
-            padding: 0.3rem 1rem;
+            padding: 0.5rem 1.5rem;
             border-radius: 20px;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             font-weight: 700;
             white-space: nowrap;
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card.popular .package-name {
+            color: var(--success-color);
+        }
+
+        .price-section {
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .price-item:hover {
+            background: var(--bg-light);
+        }
+
+        .price-label {
+            font-weight: 500;
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
+
+        .price-value {
+            font-weight: 700;
+            color: var(--success-color);
+            font-size: 1rem;
+        }
+
+        .price-item.recommended {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            border-radius: 8px;
+        }
+
+        .price-item.recommended .price-value {
+            color: var(--white);
+        }
+
+        .features-list {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .features-list h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background: var(--bg-light);
+        }
+
+        .feature-item i {
+            color: var(--success-color);
+            font-size: 1.1rem;
+            margin-top: 0.1rem;
+            min-width: 18px;
+        }
+
+        .feature-item span {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .feature-item strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .cta-card {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+        }
+
+        .order-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .order-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         /* License Section */
@@ -506,22 +636,13 @@
                 margin-bottom: 1.5rem;
             }
 
-            .pricing-table {
-                font-size: 0.85rem;
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
-            .pricing-table th,
-            .pricing-table td {
-                padding: 1rem 0.5rem;
-            }
-
-            .features-cell {
-                max-width: 200px;
-            }
-
-            .feature {
-                font-size: 0.8rem;
-                margin-bottom: 0.6rem;
+            .comparison-grid {
+                grid-template-columns: 1fr;
             }
 
             .cta-buttons {
@@ -546,31 +667,8 @@
             }
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 0.5rem;
-            }
-
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .pricing-table th,
-            .pricing-table td {
-                padding: 0.8rem 0.3rem;
-            }
-
-            .features-cell {
-                max-width: 150px;
-            }
-
-            .feature {
-                font-size: 0.75rem;
-            }
-        }
-
         /* Performance optimizations */
-        .pricing-table {
+        .pricing-card {
             contain: layout;
         }
 
@@ -587,7 +685,53 @@
             }
         }
 
-        /* Focus styles */
+        /* License Info in Cards */
+        .license-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #fff5f5, #fef0f0);
+            border-radius: var(--border-radius);
+            border: 2px solid #fecaca;
+        }
+
+        .license-info h4 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .license-terms {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .license-terms p {
+            margin-bottom: 0.5rem;
+        }
+
+        .license-terms .warning-text {
+            background: #fee2e2;
+            padding: 0.8rem;
+            border-radius: 8px;
+            border-left: 4px solid #dc2626;
+            font-weight: 600;
+            color: #991b1b;
+            margin-top: 1rem;
+        }
+
+        /* Commercial License highlight */
+        .commercial-license-highlight {
+            background: linear-gradient(135deg, #f39c12, #e67e22) !important;
+            color: white !important;
+            font-weight: 700;
+        }
+
+        .commercial-license-highlight .price-label,
+        .commercial-license-highlight .price-value {
+            color: white !important;
+        }
         a:focus,
         button:focus {
             outline: 2px solid var(--primary-color);
@@ -621,12 +765,11 @@
                 <i class="fas fa-globe" aria-hidden="true"></i> WebStatic Pro
             </a>
             <ul class="nav-menu" id="nav-menu">
+                <li><a href="#comparison" class="nav-link">Perbandingan</a></li>
                 <li><a href="#user-mandiri" class="nav-link">User Mandiri</a></li>
                 <li><a href="#managed" class="nav-link">Managed</a></li>
                 <li><a href="#license" class="nav-link">License</a></li>
                 <li><a href="#contact" class="nav-link">Kontak</a></li>
-                <li><a href="/portofolio" class="nav-link">Portofolio</a></li>
-                <li><a href="/faq" class="nav-link">FAQ</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
@@ -644,229 +787,388 @@
                 <p>Solusi Website Statis Profesional untuk Bisnis Indonesia dengan Harga Terjangkau</p>
             </header>
 
+            <!-- Info Banner -->
+            <div class="info-banner">
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                <strong>Panduan Mudah:</strong> Pilih paket sesuai kebutuhan dan budget Anda. Hubungi kami untuk konsultasi gratis!
+            </div>
+
+            <!-- Comparison Section -->
+            <section class="comparison-section" id="comparison" aria-labelledby="comparison-title">
+                <h2 class="comparison-title" id="comparison-title">
+                    <i class="fas fa-balance-scale" aria-hidden="true"></i> Mana Yang Cocok Untuk Anda?
+                </h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3><i class="fas fa-user-cog" aria-hidden="true"></i> User Mandiri</h3>
+                        <p><strong>Cocok untuk:</strong> Anda yang ingin mengelola sendiri</p>
+                        <p>✅ Lebih murah</p>
+                        <p>✅ Kontrol penuh atas aset</p>
+                        <p>❌ Perlu setup sendiri</p>
+                        <p><strong>Mulai:</strong> Rp 150.000</p>
+                    </div>
+                    <div class="comparison-card recommended">
+                        <h3><i class="fas fa-cogs" aria-hidden="true"></i> Managed Service</h3>
+                        <p><strong>Cocok untuk:</strong> Anda yang ingin praktis</p>
+                        <p>✅ Website langsung live</p>
+                        <p>✅ Kami kelola semua teknis</p>
+                        <p>✅ Support & maintenance</p>
+                        <p>❌ Tidak dapat file source code</p>
+                        <p><strong>Mulai:</strong> Rp 250.000</p>
+                    </div>
+                </div>
+            </section>
+
             <!-- User Mandiri Section -->
             <section class="pricing-section" id="user-mandiri" aria-labelledby="user-mandiri-title">
                 <h2 class="section-title" id="user-mandiri-title">
-                    <i class="fas fa-user-cog" aria-hidden="true"></i> Skema User Mandiri
+                    <i class="fas fa-user-cog" aria-hidden="true"></i> Paket User Mandiri
                 </h2>
                 <div class="section-description">
-                    Anda mengelola sendiri aset digital (domain, hosting, file website)<br>
-                    <strong>Non Source Code:</strong> File compiled/minified | <strong>Source Code:</strong> File mentah dapat diedit
+                    <strong>Anda mengelola sendiri:</strong> Domain, hosting, dan file website<br>
+                    Cocok untuk yang sudah paham atau ingin belajar mengelola website
                 </div>
                 
-                <div class="table-container">
-                    <table class="pricing-table" role="table" aria-label="Paket User Mandiri">
-                        <thead>
-                            <tr role="row">
-                                <th scope="col">Paket</th>
-                                <th scope="col">Non Source Code</th>
-                                <th scope="col">Source Code</th>
-                                <th scope="col">File + Hosting</th>
-                                <th scope="col" class="popular">File + Hosting + Domain</th>
-                                <th scope="col">Fitur Unggulan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr role="row">
-                                <td class="package-name">Basic</td>
-                                <td class="price">Rp 150.000</td>
-                                <td class="price">Rp 250.000</td>
-                                <td class="price">Rp 400.000</td>
-                                <td class="price">Rp 550.000</td>
-                                <td class="features-cell">
-                                    <div class="feature">
-                                        <i class="fas fa-file-alt" aria-hidden="true"></i>
-                                        <span><strong>1–3 halaman siap pakai</strong> (Home, Tentang, Kontak)</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-                                        <span>Responsif untuk HP & Laptop</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                        <span>Google Maps & WhatsApp Button</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-book" aria-hidden="true"></i>
-                                        <span>Panduan setup singkat</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr role="row">
-                                <td class="package-name">Standard</td>
-                                <td class="price">Rp 300.000</td>
-                                <td class="price">Rp 500.000</td>
-                                <td class="price">Rp 650.000</td>
-                                <td class="price">Rp 800.000</td>
-                                <td class="features-cell">
-                                    <div class="feature">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <span>Semua fitur Basic</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-file-alt" aria-hidden="true"></i>
-                                        <span><strong>3–5 halaman premium</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-globe" aria-hidden="true"></i>
-                                        <span>Domain .com/.id + SSL</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                                        <span>Training update konten</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-paint-brush" aria-hidden="true"></i>
-                                        <span><strong>Desain premium, siap pakai</strong></span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr role="row">
-                                <td class="package-name">Premium</td>
-                                <td class="price">Rp 500.000</td>
-                                <td class="price">Rp 800.000</td>
-                                <td class="price">Rp 950.000</td>
-                                <td class="price">Rp 1.100.000</td>
-                                <td class="features-cell">
-                                    <div class="feature">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <span>Semua fitur Standard</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-file-alt" aria-hidden="true"></i>
-                                        <span><strong>5–7 halaman custom</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-palette" aria-hidden="true"></i>
-                                        <span><strong>Custom design sesuai brand</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-search" aria-hidden="true"></i>
-                                        <span>SEO basic</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                                        <span>Form kontak + galeri + testimoni</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-headset" aria-hidden="true"></i>
-                                        <span><strong>Support 1 bulan</strong> untuk revisi ringan</span>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="pricing-grid">
+                    <!-- Basic Package -->
+                    <div class="pricing-card">
+                        <div class="package-name">Basic</div>
+                        <div class="price-section">
+                            <div class="price-item">
+                                <span class="price-label">File Saja (Single License)</span>
+                                <span class="price-value">Rp 150.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-label">+ Source Code (Single License)</span>
+                                <span class="price-value">Rp 250.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-label">+ Hosting (Single License)</span>
+                                <span class="price-value">Rp 400.000</span>
+                            </div>
+                            <div class="price-item recommended">
+                                <span class="price-label">+ Hosting + Domain (Single License)</span>
+                                <span class="price-value">Rp 550.000</span>
+                            </div>
+                            <div class="price-item" style="background: linear-gradient(135deg, #f39c12, #e67e22); color: white;">
+                                <span class="price-label">+ Full Commercial License</span>
+                                <span class="price-value">+Rp 300.000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="features-list">
+                            <h4>Yang Anda Dapat:</h4>
+                            <div class="feature-item">
+                                <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                <span><strong>1-3 halaman siap pakai</strong> (Home, Tentang, Kontak)</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                                <span>Responsif HP & Laptop</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span>Google Maps & WhatsApp Button</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-book" aria-hidden="true"></i>
+                                <span>Panduan setup singkat</span>
+                            </div>
+                        </div>
+                        
+                        <div class="license-info">
+                            <h4><i class="fas fa-exclamation-triangle" style="color: #e74c3c;"></i> Ketentuan License</h4>
+                            <div class="license-terms">
+                                <p><strong>Single License (Default):</strong></p>
+                                <p>✅ Boleh untuk 1 website bisnis Anda</p>
+                                <p>✅ Boleh modifikasi untuk kebutuhan sendiri</p>
+                                <p>❌ <strong>DILARANG KERAS:</strong> Membagi file ke orang lain, menjual kembali, atau menggunakan untuk klien</p>
+                                <p class="warning-text">⚠️ <strong>PERINGATAN:</strong> Pelanggaran license akan mengakibatkan penghapusan akun di semua platform dan tuntutan hukum sesuai UU ITE</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-card">
+                            <a href="https://wa.me/62895354511777?text=Halo,%20saya%20tertarik%20dengan%20paket%20Basic%20User%20Mandiri" class="order-button">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Basic
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Standard Package -->
+                    <div class="pricing-card popular">
+                        <div class="package-name">Standard</div>
+                        <div class="package-price">Rp 800.000</div>
+                        <div class="price-description">Paket terlaris dengan training & premium design</div>
+                        
+                        <div class="features-list">
+                            <h4>Yang Anda Dapat:</h4>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Semua fitur Basic</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                <span><strong>3-5 halaman premium</strong></span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-globe" aria-hidden="true"></i>
+                                <span>Domain .com/.id + SSL</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                                <span>Training update konten</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-paint-brush" aria-hidden="true"></i>
+                                <span><strong>Desain premium</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="license-info">
+                            <h4><i class="fas fa-exclamation-triangle" style="color: #e74c3c;"></i> Ketentuan License</h4>
+                            <div class="license-terms">
+                                <p><strong>Single License (Default):</strong></p>
+                                <p>✅ Boleh untuk 1 website bisnis Anda</p>
+                                <p>✅ Boleh modifikasi untuk kebutuhan sendiri</p>
+                                <p>❌ <strong>DILARANG KERAS:</strong> Membagi file ke orang lain, menjual kembali, atau menggunakan untuk klien</p>
+                                <p class="warning-text">⚠️ <strong>PERINGATAN:</strong> Pelanggaran license akan mengakibatkan penghapusan akun di semua platform dan tuntutan hukum sesuai UU ITE</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-card">
+                            <a href="https://wa.me/62895354511777?text=Halo%20WebStatic%20Pro%2C%0A%0ASaya%20tertarik%20dengan%20paket%3A%0A%F0%9F%93%A6%20*STANDARD%20USER%20MANDIRI*%20%E2%AD%90%0A%F0%9F%92%B0%20Harga%3A%20Rp%20800.000%0A%0AFitur%3A%0A-%20Semua%20fitur%20Basic%0A-%203-5%20halaman%20premium%0A-%20Domain%20.com%2F.id%20%2B%20SSL%0A-%20Training%20update%20konten%0A-%20Desain%20premium%0A%0AMohon%20info%20lebih%20lanjut%20dan%20cara%20pemesanan.%20Terima%20kasih!" class="order-button">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Standard - Rp 800.000
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Premium Package -->
+                    <div class="pricing-card">
+                        <div class="package-name">Premium</div>
+                        <div class="package-price">Rp 1.100.000</div>
+                        <div class="price-description">Paket lengkap dengan custom design & SEO</div>
+                        
+                        <div class="features-list">
+                            <h4>Yang Anda Dapat:</h4>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Semua fitur Standard</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-file-alt" aria-hidden="true"></i>
+                                <span><strong>5-7 halaman custom</strong></span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-palette" aria-hidden="true"></i>
+                                <span><strong>Custom design sesuai brand</strong></span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                <span>SEO basic optimization</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <span>Form kontak + galeri + testimoni</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-headset" aria-hidden="true"></i>
+                                <span><strong>Support 1 bulan</strong> untuk revisi</span>
+                            </div>
+                        </div>
+                        
+                        <div class="license-info">
+                            <h4><i class="fas fa-exclamation-triangle" style="color: #e74c3c;"></i> Ketentuan License</h4>
+                            <div class="license-terms">
+                                <p><strong>Single License (Default):</strong></p>
+                                <p>✅ Boleh untuk 1 website bisnis Anda</p>
+                                <p>✅ Boleh modifikasi untuk kebutuhan sendiri</p>
+                                <p>❌ <strong>DILARANG KERAS:</strong> Membagi file ke orang lain, menjual kembali, atau menggunakan untuk klien</p>
+                                <p class="warning-text">⚠️ <strong>PERINGATAN:</strong> Pelanggaran license akan mengakibatkan penghapusan akun di semua platform dan tuntutan hukum sesuai UU ITE</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-card">
+                            <a href="https://wa.me/62895354511777?text=Halo%20WebStatic%20Pro%2C%0A%0ASaya%20tertarik%20dengan%20paket%3A%0A%F0%9F%93%A6%20*PREMIUM%20USER%20MANDIRI*%0A%F0%9F%92%B0%20Harga%3A%20Rp%201.100.000%0A%0AFitur%3A%0A-%20Semua%20fitur%20Standard%0A-%205-7%20halaman%20custom%0A-%20Custom%20design%20sesuai%20brand%0A-%20SEO%20basic%20optimization%0A-%20Form%20kontak%20%2B%20galeri%20%2B%20testimoni%0A-%20Support%201%20bulan%20untuk%20revisi%0A%0AMohon%20info%20lebih%20lanjut%20dan%20cara%20pemesanan.%20Terima%20kasih!" class="order-button">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Premium - Rp 1.100.000
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
             <!-- Managed Section -->
             <section class="pricing-section" id="managed" aria-labelledby="managed-title">
                 <h2 class="section-title" id="managed-title">
-                    <i class="fas fa-cogs" aria-hidden="true"></i> Skema Managed (Kami Kelola Semua)
+                    <i class="fas fa-cogs" aria-hidden="true"></i> Paket Managed Service
                 </h2>
                 <div class="section-description">
-                    Kami mengelola domain, hosting, dan maintenance website untuk Anda<br>
-                    <strong>Non Source Code:</strong> File compiled/minified | <strong>Source Code:</strong> File mentah dapat diedit
+                    <strong>Kami kelola semua:</strong> Domain, hosting, maintenance, dan update website<br>
+                    <strong>Anda hanya terima:</strong> Link website siap pakai + support maintenance<br>
+                    <em>Cocok untuk yang ingin fokus ke bisnis tanpa ribet urusan teknis</em>
                 </div>
 
-                <div class="table-container">
-                    <table class="pricing-table" role="table" aria-label="Paket Managed">
-                        <thead>
-                            <tr role="row">
-                                <th scope="col">Paket</th>
-                                <th scope="col">Non Source Code</th>
-                                <th scope="col">Source Code</th>
-                                <th scope="col">File + Hosting</th>
-                                <th scope="col" class="popular">File + Hosting + Domain</th>
-                                <th scope="col">Fitur Unggulan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr role="row">
-                                <td class="package-name">Basic Managed</td>
-                                <td class="price">Rp 250.000</td>
-                                <td class="price">Rp 400.000</td>
-                                <td class="price">Rp 600.000</td>
-                                <td class="price">Rp 800.000</td>
-                                <td class="features-cell">
-                                    <div class="feature">
-                                        <i class="fas fa-server" aria-hidden="true"></i>
-                                        <span>Hosting GitHub Pages + subdomain</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-user-cog" aria-hidden="true"></i>
-                                        <span><strong>Kamu kelola akun & domain</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-rocket" aria-hidden="true"></i>
-                                        <span><strong>Website live langsung</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
-                                        <span>Update minor 1x</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr role="row">
-                                <td class="package-name">Standard Managed</td>
-                                <td class="price">Rp 500.000</td>
-                                <td class="price">Rp 750.000</td>
-                                <td class="price">Rp 950.000</td>
-                                <td class="price">Rp 1.200.000</td>
-                                <td class="features-cell">
-                                    <div class="feature">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <span>Semua fitur Basic</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-globe" aria-hidden="true"></i>
-                                        <span><strong>Domain .com/.id + SSL siap pakai</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-tools" aria-hidden="true"></i>
-                                        <span><strong>Setup penuh, website langsung live</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
-                                        <span>Update minor 2x</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr role="row">
-                                <td class="package-name">Premium Managed</td>
-                                <td class="price">Rp 800.000</td>
-                                <td class="price">Rp 1.200.000</td>
-                                <td class="price">Rp 1.400.000</td>
-                                <td class="price">Rp 1.700.000</td>
-                                <td class="features-cell">
-                                    <div class="feature">
-                                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                                        <span>Semua fitur Standard</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-palette" aria-hidden="true"></i>
-                                        <span><strong>Custom design & animasi ringan</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-cog" aria-hidden="true"></i>
-                                        <span><strong>Integrasi tools</strong> (WA, Maps, Form)</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-search" aria-hidden="true"></i>
-                                        <span>SEO basic</span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-headset" aria-hidden="true"></i>
-                                        <span><strong>Support bulanan & update 3x</strong></span>
-                                    </div>
-                                    <div class="feature">
-                                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                                        <span><strong>Semua aset tetap dipegang penjual</strong></span>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="pricing-grid">
+                    <!-- Basic Managed -->
+                    <div class="pricing-card">
+                        <div class="package-name">Basic Managed</div>
+                        <div class="price-section">
+                            <div class="price-item recommended">
+                                <span class="price-label">Website Live + Maintenance</span>
+                                <span class="price-value">Rp 250.000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="features-list">
+                            <h4>Yang Anda Dapat:</h4>
+                            <div class="feature-item">
+                                <i class="fas fa-server" aria-hidden="true"></i>
+                                <span>Hosting GitHub Pages + subdomain</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-rocket" aria-hidden="true"></i>
+                                <span><strong>Website langsung live</strong></span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-user-cog" aria-hidden="true"></i>
+                                <span>Anda kelola akun & domain sendiri</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                                <span>Update minor 1x gratis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="managed-info" style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #e8f5e8, #f0f8f0); border-radius: 15px; border: 2px solid #27ae60;">
+                            <h4 style="color: #27ae60; text-align: center; margin-bottom: 1rem;">
+                                <i class="fas fa-shield-alt"></i> Yang Anda Dapatkan
+                            </h4>
+                            <div style="font-size: 0.95rem; line-height: 1.6;">
+                                <p>🌐 <strong>Website langsung live</strong> - tidak perlu setup apapun</p>
+                                <p>🔧 <strong>Maintenance rutin:</strong> Ganti gambar, update teks, tambah produk</p>
+                                <p>💾 <strong>Backup berkala</strong> - data aman terlindungi</p>
+                                <p>📞 <strong>Support WhatsApp</strong> untuk request perubahan kecil</p>
+                                <p>⚠️ <strong>Catatan:</strong> Anda hanya mendapat link website, semua file kami kelola</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-card">
+                            <a href="https://wa.me/62895354511777?text=Halo,%20saya%20tertarik%20dengan%20paket%20Basic%20Managed" class="order-button">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Basic Managed
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Standard Managed -->
+                    <div class="pricing-card popular">
+                        <div class="package-name">Standard Managed</div>
+                        <div class="price-section">
+                            <div class="price-item recommended">
+                                <span class="price-label">Website Live + Domain + Maintenance</span>
+                                <span class="price-value">Rp 500.000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="features-list">
+                            <h4>Yang Anda Dapat:</h4>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Semua fitur Basic Managed</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-globe" aria-hidden="true"></i>
+                                <span><strong>Domain .com/.id + SSL siap pakai</strong></span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-tools" aria-hidden="true"></i>
+                                <span><strong>Setup penuh, langsung live</strong></span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                                <span>Update minor 2x gratis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="managed-info" style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #e8f5e8, #f0f8f0); border-radius: 15px; border: 2px solid #27ae60;">
+                            <h4 style="color: #27ae60; text-align: center; margin-bottom: 1rem;">
+                                <i class="fas fa-shield-alt"></i> Yang Anda Dapatkan
+                            </h4>
+                            <div style="font-size: 0.95rem; line-height: 1.6;">
+                                <p>🌐 <strong>Website + Domain .com/.id langsung live</strong></p>
+                                <p>🔧 <strong>Maintenance rutin:</strong> Ganti gambar, update teks, tambah produk</p>
+                                <p>💾 <strong>Backup berkala</strong> - data aman terlindungi</p>
+                                <p>📞 <strong>Support WhatsApp</strong> untuk request perubahan</p>
+                                <p>🔄 <strong>Update konten 2x/bulan</strong> gratis</p>
+                                <p>⚠️ <strong>Catatan:</strong> Anda hanya mendapat link website, semua file kami kelola</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-card">
+                            <a href="https://wa.me/62895354511777?text=Halo,%20saya%20tertarik%20dengan%20paket%20Standard%20Managed" class="order-button">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Standard Managed
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Premium Managed -->
+                    <div class="pricing-card">
+                        <div class="package-name">Premium Managed</div>
+                        <div class="price-section">
+                            <div class="price-item recommended">
+                                <span class="price-label">Premium Website + Full Service</span>
+                                <span class="price-value">Rp 800.000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="features-list">
+                            <h4>Yang Anda Dapat:</h4>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Semua fitur Standard Managed</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-palette" aria-hidden="true"></i>
+                                <span><strong>Custom design & animasi</strong></span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-cog" aria-hidden="true"></i>
+                                <span><strong>Integrasi tools</strong> (WA, Maps, Form)</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                <span>SEO basic optimization</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-headset" aria-hidden="true"></i>
+                                <span><strong>Support bulanan & update 3x</strong></span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                <span><strong>Aset tetap kami kelola</strong></span>
+                            </div>
+                        </div>
+                        
+                        <div class="managed-info" style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #e8f5e8, #f0f8f0); border-radius: 15px; border: 2px solid #27ae60;">
+                            <h4 style="color: #27ae60; text-align: center; margin-bottom: 1rem;">
+                                <i class="fas fa-crown"></i> Premium Full Service
+                            </h4>
+                            <div style="font-size: 0.95rem; line-height: 1.6;">
+                                <p>🌐 <strong>Custom website + Domain premium langsung live</strong></p>
+                                <p>🎨 <strong>Design sesuai brand</strong> dengan animasi menarik</p>
+                                <p>🔧 <strong>Maintenance premium:</strong> Update gambar, produk, konten, fitur baru</p>
+                                <p>💾 <strong>Backup otomatis mingguan</strong></p>
+                                <p>📞 <strong>Priority support</strong> - respon dalam 2 jam</p>
+                                <p>🔄 <strong>Update konten unlimited</strong> setiap bulan</p>
+                                <p>📊 <strong>Laporan traffic bulanan</strong></p>
+                                <p>⚠️ <strong>Catatan:</strong> Website sepenuhnya kami kelola, Anda fokus ke bisnis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-card">
+                            <a href="https://wa.me/62895354511777?text=Halo,%20saya%20tertarik%20dengan%20paket%20Premium%20Managed" class="order-button">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> Pesan Premium Managed
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -880,11 +1182,13 @@
                         <h3><i class="fas fa-user" aria-hidden="true"></i> Single-Use License</h3>
                         <p><strong>Gratis (Default)</strong></p>
                         <p>Template hanya boleh digunakan untuk 1 website/bisnis. Tidak boleh dijual kembali atau digunakan untuk klien lain.</p>
+                        <p><strong>Cocok untuk:</strong> Bisnis pribadi atau perusahaan untuk 1 website saja</p>
                     </article>
                     <article class="license-card">
                         <h3><i class="fas fa-infinity" aria-hidden="true"></i> Full/Resell License</h3>
                         <p><strong>+Rp 500.000 - Rp 2.000.000</strong></p>
                         <p>Template boleh digunakan berkali-kali, dijual kembali ke klien, atau digunakan untuk proyek komersial tanpa batas.</p>
+                        <p><strong>Cocok untuk:</strong> Web developer, agency, atau yang ingin jual template ke klien</p>
                     </article>
                 </div>
             </section>
@@ -894,13 +1198,13 @@
                 <h2 id="cta-title"><i class="fas fa-rocket" aria-hidden="true"></i> Siap Memulai Bisnis Online Anda?</h2>
                 <p>Hubungi kami sekarang untuk konsultasi gratis, demo website, atau informasi Full License</p>
                 <div class="cta-buttons">
-                    <a href="https://wa.me/628123456789?text=Halo,%20saya%20tertarik%20dengan%20paket%20website%20statis" class="cta-button" aria-label="Order atau Demo via WhatsApp">
+                    <a href="https://wa.me/62895354511777?text=Halo,%20saya%20tertarik%20dengan%20paket%20website%20statis" class="cta-button" aria-label="Order atau Demo via WhatsApp">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i> Order / Demo
                     </a>
-                    <a href="mailto:info@webstaticpro.com?subject=Inquiry%20Full%20License" class="cta-button" aria-label="Informasi Full License via Email">
+                    <a href="mailto:admin@vinnesia.my.id?subject=Inquiry%20Full%20License" class="cta-button" aria-label="Informasi Full License via Email">
                         <i class="fas fa-certificate" aria-hidden="true"></i> Full License
                     </a>
-                    <a href="tel:+628123456789" class="cta-button" aria-label="Konsultasi Gratis via Telepon">
+                    <a href="tel:+62895354511777" class="cta-button" aria-label="Konsultasi Gratis via Telepon">
                         <i class="fas fa-phone" aria-hidden="true"></i> Konsultasi Gratis
                     </a>
                 </div>
@@ -920,11 +1224,11 @@
                 <div class="footer-section">
                     <h3>Layanan</h3>
                     <div class="footer-links">
-                        <a href="/user-mandiri">User Mandiri</a>
-                        <a href="/managed">Managed Service</a>
+                        <a href="#user-mandiri">User Mandiri</a>
+                        <a href="#managed">Managed Service</a>
+                        <a href="#license">License Options</a>
                         <a href="/custom-design">Custom Design</a>
                         <a href="/seo-optimization">SEO Optimization</a>
-                        <a href="/maintenance">Website Maintenance</a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -939,9 +1243,11 @@
                 </div>
                 <div class="footer-section">
                     <h3>Kontak</h3>
-                    <p><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp: <a href="https://wa.me/628123456789">+62 812-3456-789</a></p>
-                    <p><i class="fas fa-envelope" aria-hidden="true"></i> Email: <a href="mailto:info@webstaticpro.com">info@webstaticpro.com</a></p>
-                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Jakarta, Indonesia</p>
+                    <p><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp: <a href="https://wa.me/62895354511777">+62 895-3545-11777</a></p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> Admin: <a href="mailto:admin@vinnesia.my.id">admin@vinnesia.my.id</a></p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> Support: <a href="mailto:support@vinnesia.my.id">support@vinnesia.my.id</a></p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> Personal: <a href="mailto:vin.nesia.id@gmail.com">vin.nesia.id@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Padang, Indonesia</p>
                     <div class="footer-links" style="margin-top: 1rem;">
                         <a href="/syarat-ketentuan">Syarat & Ketentuan</a>
                         <a href="/kebijakan-privasi">Kebijakan Privasi</a>
@@ -1041,21 +1347,21 @@
         }, observerOptions);
 
         // Observe all pricing sections for fade-in animation
-        document.querySelectorAll('.pricing-section, .license-section').forEach(section => {
+        document.querySelectorAll('.pricing-section, .license-section, .comparison-section').forEach(section => {
             section.style.opacity = '0';
             section.style.transform = 'translateY(30px)';
             section.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
             observer.observe(section);
         });
 
-        // Table row hover effects optimization
-        const tableRows = document.querySelectorAll('.pricing-table tbody tr');
-        tableRows.forEach(row => {
-            row.addEventListener('mouseenter', function() {
+        // Card hover effects optimization
+        const pricingCards = document.querySelectorAll('.pricing-card');
+        pricingCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
                 this.style.willChange = 'transform';
             });
             
-            row.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function() {
                 this.style.willChange = 'auto';
             });
         });
@@ -1095,29 +1401,24 @@
             });
         });
 
-        // Optimize for Core Web Vitals
-        let clsValue = 0;
-        let clsEntries = [];
-
-        const cls = new PerformanceObserver((entryList) => {
-            for (const entry of entryList.getEntries()) {
-                if (!entry.hadRecentInput) {
-                    clsEntries.push(entry);
-                    clsValue += entry.value;
-                }
-            }
+        // Price highlight animation
+        document.querySelectorAll('.price-item.recommended').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
         });
 
-        cls.observe({type: 'layout-shift', buffered: true});
-
-        // First Input Delay
-        const fid = new PerformanceObserver((entryList) => {
-            for (const entry of entryList.getEntries()) {
-                console.log('FID:', entry.processingStart - entry.startTime);
-            }
+        // Add click tracking for order buttons
+        document.querySelectorAll('.order-button, .cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // You can add analytics tracking here
+                console.log('Button clicked:', this.textContent.trim());
+            });
         });
-
-        fid.observe({type: 'first-input', buffered: true});
     </script>
 
     <!-- Structured Data for SEO -->
@@ -1128,20 +1429,27 @@
         "name": "WebStatic Pro",
         "url": "https://webmarket.vinnesia.my.id",
         "logo": "https://webmarket.vinnesia.my.id/logo.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+62-812-3456-789",
-            "contactType": "Customer Service",
-            "availableLanguage": "Indonesian"
-        },
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+62-895-3545-11777",
+                "contactType": "Customer Service",
+                "availableLanguage": "Indonesian"
+            }
+        ],
         "sameAs": [
-            "https://wa.me/628123456789"
+            "https://wa.me/62895354511777"
         ],
         "address": {
             "@type": "PostalAddress",
             "addressCountry": "ID",
-            "addressLocality": "Jakarta"
+            "addressLocality": "Padang"
         },
+        "email": [
+            "admin@vinnesia.my.id",
+            "support@vinnesia.my.id",
+            "vin.nesia.id@gmail.com"
+        ],
         "description": "Paket website statis profesional untuk bisnis Indonesia dengan harga terjangkau mulai dari 150rb"
     }
     </script>
